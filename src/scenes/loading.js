@@ -3,7 +3,7 @@
 // Handles the loading of binary assets such as images and audio files
 Crafty.scene('Loading', function(){
   // Load our sprite map image
-  Crafty.load(['assets/TrumpSpriteSheet.png', 'ssets/16x16_forest_1.gif', 'assets/hunter.png', 'assets/door_knock_3x.mp3', 'assets/door_knock_3x.ogg', 'assets/door_knock_3x.aac'], function(){
+  Crafty.load(['assets/TrumpSpriteSheet3.png', 'ssets/16x16_forest_1.gif', 'assets/hunter.png', 'assets/door_knock_3x.mp3', 'assets/door_knock_3x.ogg', 'assets/door_knock_3x.aac'], function(){
     // Once the images are loaded...
 
     // Define the individual sprites in the image
@@ -18,13 +18,15 @@ Crafty.scene('Loading', function(){
     });
 
     //  animation sprite map
-    // Crafty.sprite(16, 'assets/hunter.png', {
-    //   spr_player:  [0, 2],
-    // }, 0, 2);
+     Crafty.sprite(16, 'assets/hunter.png', {
+       spr_player:  [0, 2],
+     }, 0, 2);
 
-    Crafty.sprite(150, 230, 'assets/TrumpSpriteSheet.png', {
+    Crafty.sprite(100, 160, 'assets/TrumpSpriteSheet3.png', {
       spr_player:  [0, 0]
     });
+
+    //Crafty.sprite()
 
     // Define our sounds for later use
     //Crafty.audio.add({
