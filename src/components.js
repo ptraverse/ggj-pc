@@ -56,6 +56,46 @@ Crafty.c('Goat', {
   }
 });
 
+Crafty.c('Hunter', {
+
+
+
+  init: function() {
+    this.requires('Actor, Solid, Collision, SpriteAnimation, spr_hunter')
+
+        .animate('PlayerMovingUp',    0, 2, 7)
+        .animate('PlayerMovingRight', 0, 1, 7)
+        .animate('PlayerMovingDown',  0, 3, 7)
+        .animate('PlayerMovingLeft',  0, 0, 7)
+
+    // Watch for a change of direction and switch animations accordingly
+    var animation_speed = 4;
+    this.bind('NewDirection', function(data) {
+      if (data.x > 0) {
+        this.animate('PlayerMovingRight', animation_speed, -1);
+      } else if (data.x < 0) {
+        this.animate('PlayerMovingLeft', animation_speed, -1);
+      } else if (data.y > 0) {
+        this.animate('PlayerMovingDown', animation_speed, -1);
+      } else if (data.y < 0) {
+        this.animate('PlayerMovingUp', animation_speed, -1);
+      } else {
+        this.stop();
+      }
+    });
+
+
+  },
+
+  move: function() {
+
+    console.log('moving');
+
+  }
+
+
+});
+
 // This is the player-controlled character
 Crafty.c('PlayerCharacter', {
   init: function() {

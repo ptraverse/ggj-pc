@@ -49,8 +49,7 @@ Crafty.scene('Level2', function() {
         } else if(e.keyCode === Crafty.keys.UP_ARROW) {
           this.move.up = false;
         }
-    })
-  ;
+    });
   this.occupied[this.player.at().x][this.player.at().y] = true;
 
   // Place a tree at every edge square on our grid of 16x16 tiles
@@ -70,21 +69,22 @@ Crafty.scene('Level2', function() {
     }
   }
 
-  // Generate up to five villages on the map in random locations
-  var max_villages = 5;
+  // Generate up to six hunters, moving, on the map in random locations
+  var max_hunters = 6;
   for (var x = 0; x < Game.map_grid.width; x++) {
     for (var y = 0; y < Game.map_grid.height; y++) {
       if (Math.random() < 0.02) {
-        if (Crafty('Village').length < max_villages && !this.occupied[x][y]) {
-          Crafty.e('Village').at(x, y);
+        if (Crafty('Hunter').length < max_hunters && !this.occupied[x][y]) {
+            var hunter = Crafty.e('2D, Canvas, Hunter').at(x, y);
+            hunter.addComponent('Gravity').gravity();
         }
       }
     }
   }
 
   // Show the victory screen once all villages are visisted
-  this.show_victory = this.bind('VillageVisited', function() {
-    if (!Crafty('Village').length) {
+  this.show_victory = this.bind('HuntersHit', function() {
+    if (!Crafty('Hunters').length) {
       Crafty.scene('Victory');
     }
   });
@@ -92,5 +92,5 @@ Crafty.scene('Level2', function() {
   // Remove our event binding from above so that we don't
   //  end up having multiple redundant event watchers after
   //  multiple restarts of the game
-  this.unbind('VillageVisited', this.show_victory);
+  this.unbind('HuntersHit', this.show_victory);
 });
