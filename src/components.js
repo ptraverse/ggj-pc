@@ -52,7 +52,7 @@ Crafty.c('Rock', {
 Crafty.c('PlayerCharacter', {
   init: function() {
     this.requires('Actor, Fourway, Collision, spr_player, SpriteAnimation', 'PlayerSprite')
-      .fourway(20)
+      .fourway(10)
       .stopOnSolids()
       .onHit('Village', this.visitVillage)
       // These next lines define our four animations
