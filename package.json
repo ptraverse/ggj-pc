@@ -2,10 +2,14 @@
   "name": "ggj-crafty",
   "version": "0.0.0",
   "description": "the adventures of donald trump",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "bower": "~1.7.7",
+    "express": "~4.13.4"
+  }
 }
