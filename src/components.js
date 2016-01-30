@@ -52,19 +52,19 @@ Crafty.c('Rock', {
 Crafty.c('PlayerCharacter', {
   init: function() {
     this.requires('Actor, Fourway, Collision, spr_player, SpriteAnimation', 'PlayerSprite')
-      .fourway(10)
-      .stopOnSolids()
+      .fourway(12)
+      // .stopOnSolids()
       .onHit('Village', this.visitVillage)
       // These next lines define our four animations
-      //  each call to .animate specifies:
+      //  each call to .animate specifi7es:
       //  - the name of the animation
       //  - the x and y coordinates within the sprite
       //     map at which the animation set begins
       //  - the number of animation frames *in addition to* the first one
-      .animate('PlayerMovingUp',    0, 0, 2)
-      .animate('PlayerMovingRight', 0, 1, 2)
-      .animate('PlayerMovingDown',  0, 2, 2)
-      .animate('PlayerMovingLeft',  0, 3, 2);
+      .animate('PlayerMovingUp',    0, 2, 7)
+      .animate('PlayerMovingRight', 0, 1, 7)
+      .animate('PlayerMovingDown',  0, 4, 2)
+      .animate('PlayerMovingLeft',  0, 0, 7);
 
     // Watch for a change of direction and switch animations accordingly
     var animation_speed = 4;

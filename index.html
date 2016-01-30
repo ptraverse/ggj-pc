@@ -4,7 +4,13 @@
   <script src="lib/crafty.js"></script>
   <script src="src/game.js"></script>
   <script src="src/components.js"></script>
-  <script src="src/scenes.js"></script>
+
+  <script src="src/scenes/level_1.js"></script>
+  <script src="src/scenes/level_2.js"></script>
+
+  <script src="src/scenes/victory.js"></script>
+  <script src="src/scenes/loading.js"></script>
+
   <script>
     window.addEventListener('load', Game.start);
   </script>
@@ -39,14 +45,9 @@
   </style>
 </head>
 <body>
-  <h2>Crafty's Adventure</h2>
+  <h2>The Adventures of Donald J Trump</h2>
 
-  <p>Help Crafty visit her friends in each village.</p>
-
-  <p class="controls">Controls: Use W, A, S, and D or arrow keys to move around.</p>
-
+  <!-- <p class="controls">Controls: Use W, A, S, and D or arrow keys to move around.</p> -->
   <div id="cr-stage"></div>
-
-  <p class="bottom">Created for the "Introduction to Crafty Game Engine" tutorial on <a href="http://buildnewgames.com" target="_blank">Build New Games</a>.
 </body>
 </html>
